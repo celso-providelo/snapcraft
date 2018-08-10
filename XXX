@@ -1,0 +1,12 @@
+# Setup ($TEST_STORE=staging $TEST_USER_EMAIL $TEST_USER_PASSWORD)
+
+$ source test-config.env
+$ source env/bin/activate
+
+## full integration test suite
+
+$ ./runtests.sh tests/integration/store
+
+## Specific tests
+
+$ python3 -m unittest -b -v tests.integration.store.test_store_close.ChannelClosingTestCase.test_close_channel
